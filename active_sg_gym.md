@@ -1,0 +1,49 @@
+ActiveSG Gym Capacity in Singapore
+========================================================
+author: Terence Lim Zheng Wei
+date : National University of Singapore
+
+Project Motivation
+========================================================
+
+This project is created as part of the assesment for the Coursera Developing Data Products Project. As a gym user, I realised that there are peak hours and non-peak hours.
+
+I wanted to visualise the peak/non-peak hours so I can make a better decision on where and when I should workout. And therefore this project is born.
+
+The Application
+========================================================
+
+A web application was created using **Shiny** which allows users to view real time gym capacity trends as well as long term gym
+capacity trends. The application can be found [here](www.terencelim.shinyapps.io/active_sg_gym)
+
+Specific features of the application includes:
+
+- Real-time capacity in percentages visualised as a table
+- Comparison of real-time gym capacity between different gyms.
+- Visualisation of long-term gym capacity by gym/day.
+
+Data Source
+========================================================
+
+The data source for this project is from the ActiveSG app on android. A python script was created to automatically check for the capacity every minute and saving this data into a MongoDB database.
+
+The source code for this project can be found on [Github](www.github.com/terencelimzhengwei/active-sg-gym)
+
+Sample Data
+========================================================
+
+```r
+library(ggplot2)
+x<-read.csv("./chartGym.csv",header=TRUE,colClasses = c("factor","numeric","factor","numeric"))
+head(x)
+```
+
+```
+        gym percentage   day hour
+1 Pasir Ris         49 Thurs   17
+2 Pasir Ris         23 Thurs   19
+3 Pasir Ris         23 Thurs   19
+4 Pasir Ris         23 Thurs   19
+5 Pasir Ris         23 Thurs   19
+6 Pasir Ris         23 Thurs   19
+```
